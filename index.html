@@ -1,175 +1,368 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovation At our Finger Tips</title>
-    <script src="/index.js"></script>
-    <link rel="stylesheet" href="/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
-<link href="pure-js-slider.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+       <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+       <link rel="stylesheet" href="assets/css/styles.css">
+<body style="background-color:#0c111b ;">
+    <header class="header">
+        <nav class="nav container">
+           <div class="nav__data">
+              <a href="#" class="nav__logo">
+                 <i class="ri-planet-line"></i> Company
+              </a>
+              
+              <div class="nav__toggle" id="nav-toggle">
+                 <i class="ri-menu-line nav__burger"></i>
+                 <i class="ri-close-line nav__close"></i>
+              </div>
+           </div>
 
+           <!--=============== NAV MENU ===============-->
+           <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+                 <li><a href="#" class="nav__link">Home</a></li>
 
-</head>
-<body>
+                 <li><a href="#" class="nav__link">Company</a></li>
 
-  <header class="header">
-    <nav class="nav container">
-       <div class="nav__data">
-          <a href="#" class="nav__logo">
-             <i class="ri-planet-line"></i> Company
-          </a>
-          
-          <div class="nav__toggle" id="nav-toggle">
-             <i class="ri-menu-line nav__burger"></i>
-             <i class="ri-close-line nav__close"></i>
+                 <!--=============== DROPDOWN 1 ===============-->
+                 <li class="dropdown__item">
+                    <div class="nav__link">
+                       Analytics <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-pie-chart-line"></i> Overview
+                          </a>                          
+                       </li>
+
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-arrow-up-down-line"></i> Transactions
+                          </a>
+                       </li>
+
+                       <!--=============== DROPDOWN SUBMENU ===============-->
+                       <li class="dropdown__subitem">
+                          <div class="dropdown__link">
+                             <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
+                          </div>
+
+                          <ul class="dropdown__submenu">
+                             <li>
+                                <a href="#" class="dropdown__sublink">
+                                   <i class="ri-file-list-line"></i> Documents
+                                </a>
+                             </li>
+     
+                             <li>
+                                <a href="#" class="dropdown__sublink">
+                                   <i class="ri-cash-line"></i> Payments
+                                </a>
+                             </li>
+     
+                             <li>
+                                <a href="#" class="dropdown__sublink">
+                                   <i class="ri-refund-2-line"></i> Refunds
+                                </a>
+                             </li>
+                          </ul>
+                       </li>
+                    </ul>
+                 </li>
+                 
+                 <li><a href="#" class="nav__link">Products</a></li>
+
+                 <!--=============== DROPDOWN 2 ===============-->
+                 <li class="dropdown__item">
+                    <div class="nav__link">
+                       Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-user-line"></i> Profiles
+                          </a>                          
+                       </li>
+
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-lock-line"></i> Accounts
+                          </a>
+                       </li>
+
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-message-3-line"></i> Messages
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+
+                 <li><a href="#" class="nav__link">Contact</a></li>
+              </ul>
+           </div>
+        </nav>
+     </header>
+
+     <div class="carousel-container">
+      <div class="carousel">
+      </div>
+    </div>
+    <div class="video-card-container">
+      <div class="video-card">
+        <img src="images/disney.PNG" class="video-card-image" alt="" />
+        <video src="videos/disney.mp4" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="images/pixar.PNG" class="video-card-image" alt="" />
+        <video src="videos/pixar.mp4" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="images/marvel.PNG" class="video-card-image" alt="" />
+        <video src="videos/marvel.mp4" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="images/star-wars.PNG" class="video-card-image" alt="" />
+        <video src="videos/star-war.mp4" muted loop class="card-video"></video>
+      </div>
+      <div class="video-card">
+        <img src="images/geographic.PNG" class="video-card-image" alt="" />
+        <video
+          src="videos/geographic.mp4"
+          muted
+          loop
+          class="card-video"
+        ></video>
+      </div>
+    </div>
+    <h1 class="title">Recommended for you</h1>
+    <div class="movies-list">
+      <button class="pre-btn" title="btn">
+        <img src="images/pre.png" alt="" />
+      </button>
+      <button class="nxt-btn" title="btn">
+        <img src="images/nxt.png" alt="" />
+      </button>
+      <div class="card-container">
+        <div class="card">
+          <img src="images/poster 1.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
           </div>
-       </div>
-
-       <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-             <li><a href="#" class="nav__link">Home</a></li>
-
-             <li><a href="#" class="nav__link">Company</a></li>
-
-             <li class="dropdown__item">
-                <div class="nav__link">
-                   Analytics <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                </div>
-
-                <ul class="dropdown__menu">
-                   <li>
-                      <a href="#" class="dropdown__link">
-                         <i class="ri-pie-chart-line"></i> Overview
-                      </a>                          
-                   </li>
-
-                   <li>
-                      <a href="#" class="dropdown__link">
-                         <i class="ri-arrow-up-down-line"></i> Transactions
-                      </a>
-                   </li>
-
-                   
-                   <li class="dropdown__subitem">
-                      <div class="dropdown__link">
-                         <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
-                      </div>
-
-                      <ul class="dropdown__submenu">
-                         <li>
-                            <a href="#" class="dropdown__sublink">
-                               <i class="ri-file-list-line"></i> Documents
-                            </a>
-                         </li>
- 
-                         <li>
-                            <a href="#" class="dropdown__sublink">
-                               <i class="ri-cash-line"></i> Payments
-                            </a>
-                         </li>
- 
-                         <li>
-                            <a href="#" class="dropdown__sublink">
-                               <i class="ri-refund-2-line"></i> Refunds
-                            </a>
-                         </li>
-                      </ul>
-                   </li>
-                </ul>
-             </li>
-             
-             <li><a href="#" class="nav__link">Products</a></li>
-
-             
-             <li class="dropdown__item">
-                <div class="nav__link">
-                   Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                </div>
-
-                <ul class="dropdown__menu">
-                   <li>
-                      <a href="#" class="dropdown__link">
-                         <i class="ri-user-line"></i> Profiles
-                      </a>                          
-                   </li>
-
-                   <li>
-                      <a href="#" class="dropdown__link">
-                         <i class="ri-lock-line"></i> Accounts
-                      </a>
-                   </li>
-
-                   <li>
-                      <a href="#" class="dropdown__link">
-                         <i class="ri-message-3-line"></i> Messages
-                      </a>
-                   </li>
-                </ul>
-             </li>
-
-             <li><a href="#" class="nav__link">Contact</a></li>
-          </ul>
-       </div>
-    </nav>
- </header>
-    
-
-        
-        <div class="slider-container">
-          <div class="slider-control left inactive"></div>
-          <div class="slider-control right"></div>
-          <ul class="slider-pagi"></ul>
-          <div class="slider">
-            <div class="slide slide-0 active">
-              <div class="slide__bg"></div>
-              <div class="slide__content">
-                <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                  <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-                </svg>
-                <div class="slide__text">
-                  <h2 class="slide__text-heading" style="font-family: 'Roboto', sans-serif;">Enterprise Business Solutions</h2>
-                  <p class="slide__text-desc" style="font-family: 'Roboto', sans-serif;"> The competitive scenario of business has called for efficient operational activities, leveraging investment cost and overall high profitability. Our experts will guide you to achieve all with perfect enterprise business solution. </p>
-                  <a class="slide__text-link" style="font-family: 'Roboto', sans-serif;">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <div class="slide slide-1 ">
-              <div class="slide__bg"></div>
-              <div class="slide__content">
-                <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                  <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-                </svg>
-                <div class="slide__text">
-                  <h2 class="slide__text-heading" style="font-family: 'Roboto', sans-serif;">Enterprise Application Services</h2>
-                  <p class="slide__text-desc" style="font-family: 'Roboto', sans-serif;">The customer base is retained by the complete and appropriate application maintenance and support service. Partner with us to get the accurate service and retain the trust and usability factor of your user base.  </p>
-                  <a class="slide__text-link" style="font-family: 'Roboto', sans-serif;">Learn More</a>
-                </div>
-              </div>
-            </div>
-            <div class="slide slide-2">
-              <div class="slide__bg"></div>
-              <div class="slide__content">
-                <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                  <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-                </svg>
-                <div class="slide__text">
-                  <h2 class="slide__text-heading" style="font-family: 'Roboto', sans-serif;">Digital Marketing Services</h2>
-                  <p class="slide__text-desc" style="font-family: 'Roboto', sans-serif;">Nowadays people are busy and it has drastically changed the purchasing scenario. They focus more and more on the digital world and rely on it for maximum things; that call for businesses to enter into the digital world. Digital marketing is the solution to enter into this digitized world and enhance your business market.</p>
-                  <a class="slide__text-link" style="font-family: 'Roboto', sans-serif;">Learn More</a>
-                </div>
-              </div>
-
-            </div>
-            
         </div>
+        <div class="card">
+          <img src="images/poster 2.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 3.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 4.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 5.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 6.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 7.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 8.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 9.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 10.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 11.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 12.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <h1 class="title">Recent</h1>
+    <div class="movies-list">
+      <button class="pre-btn" title="btn">
+        <img src="images/pre.png" alt="" />
+      </button>
+      <button class="nxt-btn" title="btn">
+        <img src="images/nxt.png" alt="" />
+      </button>
+      <div class="card-container">
+        <div class="card">
+          <img src="images/poster 12.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 11.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 10.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 9.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 8.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 7.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 6.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 5.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 4.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 3.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 2.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/poster 1.png" class="card-img" alt="" />
+          <div class="card-body">
+            <h2 class="name">Movie name</h2>
+            <h6 class="des">uoewoiffiefhh cnpp ndipedp dojdo</h6>
+            <button class="watchlist-btn">add to watchlist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>In Guidance With DevTown</p>
+      <p>By Manan Ratnam Pandey - Crux</p>
+    </footer>
 
-
-<script src="assets/js/main.js"></script>
-<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-<script src="index.js"></script>
+     
+     <script src="assets/js/main.js"></script>
+     <script src="index.js"></script>
 </body>
 </html>

@@ -1,126 +1,110 @@
-$(document).ready(function() {
-          
-    var $slider = $(".slider"),
-        $slideBGs = $(".slide__bg"),
-        diff = 0,
-        curSlide = 0,
-        numOfSlides = $(".slide").length-1,
-        animating = false,
-        animTime = 500,
-        autoSlideTimeout,
-        autoSlideDelay = 4000,
-        $pagination = $(".slider-pagi");
-    
-    function createBullets() {
-      for (var i = 0; i < numOfSlides+1; i++) {
-        var $li = $("<li class='slider-pagi__elem'></li>");
-        $li.addClass("slider-pagi__elem-"+i).data("page", i);
-        if (!i) $li.addClass("active");
-        $pagination.append($li);
-      }
-    };
-    
-    createBullets();
-    
-    function manageControls() {
-      $(".slider-control").removeClass("inactive");
-      if (!curSlide) $(".slider-control.left").addClass("inactive");
-      if (curSlide === numOfSlides) $(".slider-control.right").addClass("inactive");
-    };
-    
-    function autoSlide() {
-      autoSlideTimeout = setTimeout(function() {
-        curSlide++;
-        if (curSlide > numOfSlides) curSlide = 0;
-        changeSlides();
-      }, autoSlideDelay);
-    };
-    
-    autoSlide();
-    
-    function changeSlides(instant) {
-      if (!instant) {
-        animating = true;
-        manageControls();
-        $slider.addClass("animating");
-        $slider.css("top");
-        $(".slide").removeClass("active");
-        $(".slide-"+curSlide).addClass("active");
-        setTimeout(function() {
-          $slider.removeClass("animating");
-          animating = false;
-        }, animTime);
-      }
-      window.clearTimeout(autoSlideTimeout);
-      $(".slider-pagi__elem").removeClass("active");
-      $(".slider-pagi__elem-"+curSlide).addClass("active");
-      $slider.css("transform", "translate3d("+ -curSlide*100 +"%,0,0)");
-      $slideBGs.css("transform", "translate3d("+ curSlide*50 +"%,0,0)");
-      diff = 0;
-      autoSlide();
-    }
-  
-    function navigateLeft() {
-      if (animating) return;
-      if (curSlide > 0) curSlide--;
-      changeSlides();
-    }
-  
-    function navigateRight() {
-      if (animating) return;
-      if (curSlide < numOfSlides) curSlide++;
-      changeSlides();
-    }
-  
-    $(document).on("mousedown touchstart", ".slider", function(e) {
-      if (animating) return;
-      window.clearTimeout(autoSlideTimeout);
-      var startX = e.pageX || e.originalEvent.touches[0].pageX,
-          winW = $(window).width();
-      diff = 0;
-      
-      $(document).on("mousemove touchmove", function(e) {
-        var x = e.pageX || e.originalEvent.touches[0].pageX;
-        diff = (startX - x) / winW * 70;
-        if ((!curSlide && diff < 0) || (curSlide === numOfSlides && diff > 0)) diff /= 2;
-        $slider.css("transform", "translate3d("+ (-curSlide*100 - diff) +"%,0,0)");
-        $slideBGs.css("transform", "translate3d("+ (curSlide*50 + diff/2) +"%,0,0)");
-      });
-    });
-    
-    $(document).on("mouseup touchend", function(e) {
-      $(document).off("mousemove touchmove");
-      if (animating) return;
-      if (!diff) {
-        changeSlides(true);
-        return;
-      }
-      if (diff > -8 && diff < 8) {
-        changeSlides();
-        return;
-      }
-      if (diff <= -8) {
-        navigateLeft();
-      }
-      if (diff >= 8) {
-        navigateRight();
-      }
-    });
-    
-    $(document).on("click", ".slider-control", function() {
-      if ($(this).hasClass("left")) {
-        navigateLeft();
-      } else {
-        navigateRight();
-      }
-    });
-    
-    $(document).on("click", ".slider-pagi__elem", function() {
-      curSlide = $(this).data("page");
-      changeSlides();
-    });
-    
+let movies = [
+  {
+    name: "falcon and the winter soldier",
+    des:
+      "The Falcon and the Winter Soldier is based on Marvel Comics featuring the characters Sam Wilson / Falcon and Bucky Barnes / Winter Soldier ",
+    Image: "images/slider 2.PNG"
+  },
+  {
+    name: "loki",
+    des:
+      "Loki is the third television series in the Marvel Cinematic Universe (MCU) produced by Marvel Studios, sharing continuity with the films of the franchise ",
+    Image: "images/slider 1.PNG"
+  },
+  {
+    name: "wanda vision",
+    des:
+      "WandaVision, is the first television series in the Marvel Cinematic Universe (MCU) produced by Marvel Studios, sharing continuity with the films of the franchise, and is set after the events of the film Avengers: Endgame (2019). ",
+    Image: "images/slider 3.PNG"
+  },
+  {
+    name: "raya and the last dragon",
+    des:
+      "Raya and the Last Dragon is based on traditional Southeast Asian cultures.",
+    Image: "images/slider 4.PNG"
+  },
+  {
+    name: "luca",
+    des:
+      "Luca, the film centers on Luca Paguro, a young sea monster boy with the ability to assume human form while on land, who explores the town of Portorosso with his new best friends, Alberto Scorfano and Giulia Marcovaldo, experiencing a life-changing summer adventure",
+    Image: "images/slider 5.PNG"
+  }
+];
+
+const carousel = document.querySelector(".carousel");
+let sliders = [];
+
+let slideIndex = 0;
+
+const createSlide = () => {
+  if (slideIndex >= movies.length) {
+    slideIndex = 0;
+  }
+  let slide = document.createElement("div");
+  var imgElement = document.createElement("img");
+  let content = document.createElement("div");
+  let h1 = document.createElement("h1");
+  let p = document.createElement("p");
+
+  imgElement.appendChild(document.createTextNode(""));
+  h1.appendChild(document.createTextNode(movies[slideIndex].name));
+  p.appendChild(document.createTextNode(movies[slideIndex].des));
+  content.appendChild(h1);
+  content.appendChild(p);
+  slide.appendChild(content);
+  slide.appendChild(imgElement);
+  carousel.appendChild(slide);
+
+  imgElement.src = movies[slideIndex].Image;
+  slideIndex++;
+
+  slide.className = "slider";
+  content.className = "slide-content";
+  h1.className = "movie-title";
+  p.className = "movie-des";
+
+  sliders.push(slide);
+
+  if (sliders.length) {
+    sliders[0].style.marginLeft = `calc(-${100 * (sliders.length - 2)}% - ${
+      30 * (sliders.length - 2)
+    }px)`;
+  }
+};
+
+for (let i = 0; i < 3; i++) {
+  createSlide();
+}
+
+setInterval(() => {
+  createSlide(sliders);
+}, 3000);
+
+const videoCards = [...document.querySelectorAll(".video-card")];
+
+videoCards.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    let video = item.children[1];
+    video.play();
   });
+  item.addEventListener("mouseleave", () => {
+    let video = item.children[1];
+    video.pause();
+  });
+});
 
+let cardContainers = [...document.querySelectorAll(".card-container")];
+let preBtns = [...document.querySelectorAll(".pre-btn")];
+let nxtBtns = [...document.querySelectorAll(".nxt-btn")];
 
-  
+cardContainers.forEach((item, i) => {
+  let containerDimensions = item.getBoundingClientRect();
+  let containerWidth = containerDimensions.width;
+
+  nxtBtns[i].addEventListener("click", () => {
+    item.scrollLeft += containerWidth - 200;
+  });
+  preBtns[i].addEventListener("click", () => {
+    item.scrollLeft -= containerWidth + 200;
+  });
+});
